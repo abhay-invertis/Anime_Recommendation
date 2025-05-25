@@ -21,15 +21,11 @@ pip
 Git
 
 Clone the repository
-bash
-Copy
-Edit
+
 git clone https://github.com/your-github-username/your-repo-name.git
 cd your-repo-name
 Create virtual environment (optional but recommended)
-bash
-Copy
-Edit
+
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 Install dependencies
@@ -43,14 +39,10 @@ Copy
 Edit
 python manage.py migrate
 Create a superuser (optional)
-bash
-Copy
-Edit
+
 python manage.py createsuperuser
 Run the server
-bash
-Copy
-Edit
+
 python manage.py runserver
 API will be at http://127.0.0.1:8000/
 
@@ -64,9 +56,7 @@ Endpoint	Method	Description	Auth Required
 Register
 Request:
 
-http
-Copy
-Edit
+
 POST /auth/register/
 Content-Type: application/json
 
@@ -77,9 +67,6 @@ Content-Type: application/json
 }
 Response (201 Created):
 
-json
-Copy
-Edit
 {
   "id": 1,
   "username": "user1",
@@ -88,9 +75,7 @@ Edit
 Login
 Request:
 
-http
-Copy
-Edit
+
 POST /auth/login/
 Content-Type: application/json
 
@@ -100,9 +85,6 @@ Content-Type: application/json
 }
 Response (200 OK):
 
-json
-Copy
-Edit
 {
   "refresh": "eyJ0eXAiOiJKV1QiLCJh...refresh_token_here...",
   "access": "eyJ0eXAiOiJKV1QiLCJh...access_token_here..."
@@ -110,9 +92,7 @@ Edit
 Refresh Token
 Request:
 
-http
-Copy
-Edit
+
 POST /auth/token/refresh/
 Content-Type: application/json
 
@@ -121,27 +101,24 @@ Content-Type: application/json
 }
 Response (200 OK):
 
-json
-Copy
-Edit
+
 {
   "access": "eyJ0eXAiOiJKV1QiLCJh...new_access_token_here..."
 }
 Anime Search (Public)
 Endpoint	Method	Description	Auth Required
-/anime/search/	GET	Search anime by name or genre query params	No
+/anime/search/	GET	Search anime by name or genre query params
+
+
+
+
+
+
 
 Example Request:
 
-pgsql
-Copy
-Edit
 GET /anime/search/?name=Naruto
 Response (200 OK):
-
-json
-Copy
-Edit
 [
   {
     "id": 20,
@@ -167,9 +144,7 @@ Endpoint	Method	Description	Auth Required
 
 Example Create Request:
 
-http
-Copy
-Edit
+
 POST /userpreferences/
 Authorization: Bearer <access_token>
 Content-Type: application/json
@@ -179,9 +154,7 @@ Content-Type: application/json
 }
 Response (201 Created):
 
-json
-Copy
-Edit
+
 {
   "id": 1,
   "user": 1,
@@ -194,9 +167,7 @@ Endpoint	Method	Description	Auth Required
 
 Example Create Request:
 
-http
-Copy
-Edit
+
 POST /watchedanime/
 Authorization: Bearer <access_token>
 Content-Type: application/json
@@ -208,9 +179,7 @@ Content-Type: application/json
 }
 Response (201 Created):
 
-json
-Copy
-Edit
+
 {
   "id": 1,
   "user": 1,
@@ -224,16 +193,11 @@ Endpoint	Method	Description	Auth Required
 
 Example Request:
 
-http
-Copy
-Edit
 GET /recommendations/
-Authorization: Bearer <access_token>
+
+
 Response (200 OK):
 
-json
-Copy
-Edit
 [
   {
     "id": 30,
